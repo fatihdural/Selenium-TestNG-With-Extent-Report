@@ -1,0 +1,26 @@
+ARP için basit bir test mevcut. 
+<mvn clean test -Dsurefire.suiteXmlFiles=TestNG-NetworkArpTest.xml> komutu çalıştırıldığında,
+test yapılır ve /andasis-eaaa-web-e2e-tests klasörü altında, "MyOwnReport.html" isminde extent report dosyası oluşur. Bu dosya pass, fail ve logları gösterir. Sayfanın aşağında ise hatanın olduğu yerin ekran görüntüsü bulunur.
+
+Projede "extentreports-4.0.1" kullanıldı.
+
+Kütüphanenin maven'a eklenmesi ve kullanılmasıyla ilgili bazı notlar:
+
+- Open source kütüphane .jar dosyası olarak indirilir.
+- Dosya projenin olduğu klasörün içine kopyalanır.
+- Intellij'de File->Project Structure->Modules->+++->JARs or directories kısmından jar dosyası local olarak eklenir.
+- Maven'a bu kütüphanenin eklenmesi içinde(maven'a eklenmez ise mvn clean test şeklinde terminalden test çalıştırılamaz, sadece direkt run edilebilir) pom.xml dosyası içinde eklemeler yapılması gerekir. Örneğin;
+
+        <dependency>
+            <groupId>com.aventstack.extentreports</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/extentreports-4.0.1.jar</systemPath>
+        </dependency>
+
+
+- IDE pomdaki değişiklikleri kendi kendine günceller.
+
+- Şu anda proje açılıp, ARP test direk çalıştırılabilir durumdadır.
+

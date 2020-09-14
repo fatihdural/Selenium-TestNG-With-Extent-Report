@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="User and User Groups Test Suite">
+    <test name="User and User Groups Test">
+        <classes>
+            <class name="test.LoginTest">
+                <methods>
+                    <include name="login"/>
+                </methods>
+            </class>
+            <class name="test.network.ArpTest"/>
+        </classes>
+    </test>
+</suite>
